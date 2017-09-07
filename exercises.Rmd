@@ -1,0 +1,174 @@
+---
+title: "RMarkdown Exercises"
+author: "Christina Maimone"
+date: "`r Sys.Date()`"
+output: 
+  html_document:
+    toc: TRUE
+    toc_float: TRUE
+---
+
+```{r setup, include=FALSE}
+knitr::opts_chunk$set(echo = TRUE)
+```
+
+This notebooks is really all one big exercise: by viewing the HTML version of this (which is what you're doing, right?), try to recreate the key components of this file on your own!  Open the *.Rmd version of this file to see how things were made.
+
+Remember to use the [cheat sheet](http://www.rstudio.com/wp-content/uploads/2016/03/rmarkdown-cheatsheet-2.0.pdf) to help!
+
+Also remember: really the best way to learn is to see what the range of things you can do is, and then just try using it for your own projects.  You can look up the details and the syntax for specific features when you want to use them.  Just get proficient with the basics to start.
+
+# Step 1: Header
+
+Set up the header.  Set a value for the title, and your name.  I like the date to be re-generated each time I knit the file, so I use a snippet of R code instead of writing in a date: 
+
+<code>date: &quot;&#96;r Sys.Date()&#96;&quot;</code>
+
+Yes, the back-tick denoted code section goes inside normal quotes.  Also note: creating the above literal snippet of a code block is difficult and not a normal thing to do unless you're writing workshop materials.  They way I've done it above is a hack.  I wouldn't try to replicate it as an exercise (I still haven't figured out a good way to do it consistently).
+
+Also, turn on a floating table of contents.
+
+# Step 2: Sections
+
+Make some sections in your document.  Use different levels.
+
+## This is a subsection
+
+### This is a subsubsection
+
+#### How far can we go?
+
+This level isn't in the table of contents anymore.
+
+##### Level 5!
+
+
+# Step 3: Formatting, Links, Images, and HTML
+
+*Italics*, **Bold**, and `verbatim` are all possible, but no underline.
+
+We can make lists too!  Be careful -- spacing matters when you start a list.
+
+* The Next Generation
+* Deep Space Nine
+* Original Series
+* Enterprise
+* Voyager
+
+Links: [Google](http://www.google.com)
+
+Any URL will also get converted to a link: http://www.google.com
+
+Images can come from local files, or urls:
+
+![](rainbow.png)
+
+If you want to control image size, then it's best to use an HTML image tag instead:
+
+```html
+<img src="https://www.r-project.org/logo/Rlogo.png" style="width:200px">
+```
+
+<img src="https://www.r-project.org/logo/Rlogo.png" style="width:200px">
+
+You can include any html that you want.
+
+<span style="text-decoration: underline">I can get underline with html</span>
+
+# Step 4: Code Chunks
+
+Finally, let's write some code!
+
+```{r}
+2+2
+```
+
+```{r}
+hist(rnorm(100))
+```
+
+We can change figure sizes
+
+```{r, fig.width=3, fig.height=3}
+hist(rnorm(100))
+```
+
+Chunks that don't return anything won't have output
+
+```{r}
+x <- 4
+```
+
+When there are multiple lines with output, by default, your chunk will get split:
+
+```{r}
+mean(rnorm(100))
+sd(rnorm(100))
+```
+
+
+# Step 5: Chunk Options
+
+We can control whether chunks are evaluated, whether the code and output is shown, and how output is formatted.
+
+First, a normal chunk
+
+```{r}
+x<-10
+```
+
+Don't evaluate this next one:
+
+```{r}
+x<-5
+x
+```
+
+Above wasn't evaluated, so x will still be 10
+
+```{r}
+x
+```
+
+You can also just get the output (don't include the code):
+
+```{r, echo=FALSE}
+hist(rnorm(100))
+```
+
+
+
+# Step 6: Formatting Output
+
+We want our tables to look pretty.  There are multiple options.  I like datatable from the DT package:
+
+```{r, eval=FALSE}
+install.packages("DT")
+```
+
+```{r}
+library(DT)
+```
+
+```{r}
+mtcars %>% datatable()
+```
+
+For static tables, try `kable`, or `stargazer` for regression output.
+
+
+# What else?
+
+A few parting thoughts.
+
+Something that isn't in this example file, but can be found in other *.Rmd exercise files for Research Computing workshops, is a paramter up top that is used to either include or exclude exercise answers.  This is useful if you're writing homework assignments, workshops, or if you want a version of your files with the code, and a different one with only the output.
+
+You can knit RMarkdown documents by calling the `rmarkdown::render` function.  (You don't have to just hit the button.)  See the `knitall.r` files in the [Intro to R workshop repo](https://github.com/nuitrcs/intro_r_workshop).
+
+It's often useful to put a chunk with your system information at the end of a file, so at least you know what version of everything was used, so that if it breaks in the future with updates, you have a chance to recover old versions.
+
+```{r}
+sessionInfo()
+```
+
+
