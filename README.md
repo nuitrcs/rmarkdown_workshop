@@ -11,16 +11,24 @@ Look at the [HTML version](https://nuitrcs.github.io/rmarkdown_workshop/exercise
 
 # Resources
 
-[Official RMarkdown Documentation](http://rmarkdown.rstudio.com/) from RStudio
+## Reference
 
 [RMarkdown Cheat Sheet](http://www.rstudio.com/wp-content/uploads/2016/03/rmarkdown-cheatsheet-2.0.pdf) also from RStudio
+
+[Official RMarkdown Documentation and Guide](http://rmarkdown.rstudio.com/) from RStudio
+
+## Workshop/Tutorial Materials
 
 [Creating Dynamic Documents with RMarkdown and Knitr](http://rpubs.com/marschmi/RMarkdown) by Marian L. Schmidt
 
 [RMarkdown for writing reproducible scientific papers](https://libscie.github.io/rmarkdown-workshop/handout.html) by Mike Frank & Chris Hartgerink
 
+[RMarkdown from Penn State Stat 485](https://onlinecourses.science.psu.edu/stat485/node/29): video tutorials on RMarkdown
+
+## Why use RMarkdown?
+
 [Reproducible Research Using RMarkdown and Git through RStudio](https://rpubs.com/marschmi/105639) by Marian L. Schmidt
 
-[RMarkdown from Penn State Stat 485](https://onlinecourses.science.psu.edu/stat485/node/29): video tutorials on RMarkdown
+## Other
 
 RMarkdown magic is made possible by [`knitr`](https://yihui.name/knitr/) from Yihui Xie
