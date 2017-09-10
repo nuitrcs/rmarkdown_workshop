@@ -25,6 +25,8 @@ Look at the [HTML version](https://nuitrcs.github.io/rmarkdown_workshop/exercise
 
 [RMarkdown from Penn State Stat 485](https://onlinecourses.science.psu.edu/stat485/node/29): video tutorials on RMarkdown
 
+[R for Data Science: RMarkdown](http://r4ds.had.co.nz/r-markdown.html): chapter in the R for Data Science book
+
 ## Why use RMarkdown?
 
 [Reproducible Research Using RMarkdown and Git through RStudio](https://rpubs.com/marschmi/105639) by Marian L. Schmidt
