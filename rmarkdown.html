@@ -1,0 +1,1126 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8">
+  <meta name="generator" content="pandoc">
+  <title></title>
+  <meta name="apple-mobile-web-app-capable" content="yes">
+  <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no, minimal-ui">
+  <link rel="stylesheet" href="libs/reveal.js-3.3.0.1/css/reveal.css"/>
+
+
+<style type="text/css">
+div.sourceCode { overflow-x: auto; }
+table.sourceCode, tr.sourceCode, td.lineNumbers, td.sourceCode {
+  margin: 0; padding: 0; vertical-align: baseline; border: none; }
+table.sourceCode { width: 100%; line-height: 100%; }
+td.lineNumbers { text-align: right; padding-right: 4px; padding-left: 4px; color: #aaaaaa; border-right: 1px solid #aaaaaa; }
+td.sourceCode { padding-left: 5px; }
+code > span.kw { color: #007020; font-weight: bold; } /* Keyword */
+code > span.dt { color: #902000; } /* DataType */
+code > span.dv { color: #40a070; } /* DecVal */
+code > span.bn { color: #40a070; } /* BaseN */
+code > span.fl { color: #40a070; } /* Float */
+code > span.ch { color: #4070a0; } /* Char */
+code > span.st { color: #4070a0; } /* String */
+code > span.co { color: #60a0b0; font-style: italic; } /* Comment */
+code > span.ot { color: #007020; } /* Other */
+code > span.al { color: #ff0000; font-weight: bold; } /* Alert */
+code > span.fu { color: #06287e; } /* Function */
+code > span.er { color: #ff0000; font-weight: bold; } /* Error */
+code > span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warning */
+code > span.cn { color: #880000; } /* Constant */
+code > span.sc { color: #4070a0; } /* SpecialChar */
+code > span.vs { color: #4070a0; } /* VerbatimString */
+code > span.ss { color: #bb6688; } /* SpecialString */
+code > span.im { } /* Import */
+code > span.va { color: #19177c; } /* Variable */
+code > span.cf { color: #007020; font-weight: bold; } /* ControlFlow */
+code > span.op { color: #666666; } /* Operator */
+code > span.bu { } /* BuiltIn */
+code > span.ex { } /* Extension */
+code > span.pp { color: #bc7a00; } /* Preprocessor */
+code > span.at { color: #7d9029; } /* Attribute */
+code > span.do { color: #ba2121; font-style: italic; } /* Documentation */
+code > span.an { color: #60a0b0; font-weight: bold; font-style: italic; } /* Annotation */
+code > span.cv { color: #60a0b0; font-weight: bold; font-style: italic; } /* CommentVar */
+code > span.in { color: #60a0b0; font-weight: bold; font-style: italic; } /* Information */
+</style>
+
+<link rel="stylesheet" href="libs/reveal.js-3.3.0.1/css/theme/simple.css" id="theme">
+
+
+  <!-- some tweaks to reveal css -->
+  <style type="text/css">
+    .reveal h1 { font-size: 2.0em; }
+    .reveal h2 { font-size: 1.5em;  }
+    .reveal h3 { font-size: 1.25em;	}
+    .reveal h4 { font-size: 1em;	}
+
+    .reveal .slides>section,
+    .reveal .slides>section>section {
+      padding: 0px 0px;
+    }
+
+
+
+    .reveal table {
+      border-width: 1px;
+      border-spacing: 2px;
+      border-style: dotted;
+      border-color: gray;
+      border-collapse: collapse;
+      font-size: 0.7em;
+    }
+
+    .reveal table th {
+      border-width: 1px;
+      padding-left: 10px;
+      padding-right: 25px;
+      font-weight: bold;
+      border-style: dotted;
+      border-color: gray;
+    }
+
+    .reveal table td {
+      border-width: 1px;
+      padding-left: 10px;
+      padding-right: 25px;
+      border-style: dotted;
+      border-color: gray;
+    }
+
+
+  </style>
+
+    <style type="text/css">code{white-space: pre;}</style>
+
+    <link rel="stylesheet" href="assets/theme_white.css"/>
+
+<!-- Printing and PDF exports -->
+<script id="paper-css" type="application/dynamic-css">
+
+/* Default Print Stylesheet Template
+   by Rob Glazebrook of CSSnewbie.com
+   Last Updated: June 4, 2008
+
+   Feel free (nay, compelled) to edit, append, and
+   manipulate this file as you see fit. */
+
+
+@media print {
+
+	/* SECTION 1: Set default width, margin, float, and
+	   background. This prevents elements from extending
+	   beyond the edge of the printed page, and prevents
+	   unnecessary background images from printing */
+	html {
+		background: #fff;
+		width: auto;
+		height: auto;
+		overflow: visible;
+	}
+	body {
+		background: #fff;
+		font-size: 20pt;
+		width: auto;
+		height: auto;
+		border: 0;
+		margin: 0 5%;
+		padding: 0;
+		overflow: visible;
+		float: none !important;
+	}
+
+	/* SECTION 2: Remove any elements not needed in print.
+	   This would include navigation, ads, sidebars, etc. */
+	.nestedarrow,
+	.controls,
+	.fork-reveal,
+	.share-reveal,
+	.state-background,
+	.reveal .progress,
+	.reveal .backgrounds {
+		display: none !important;
+	}
+
+	/* SECTION 3: Set body font face, size, and color.
+	   Consider using a serif font for readability. */
+	body, p, td, li, div {
+		font-size: 20pt!important;
+		font-family: Georgia, "Times New Roman", Times, serif !important;
+		color: #000;
+	}
+
+	/* SECTION 4: Set heading font face, sizes, and color.
+	   Differentiate your headings from your body text.
+	   Perhaps use a large sans-serif for distinction. */
+	h1,h2,h3,h4,h5,h6 {
+		color: #000!important;
+		height: auto;
+		line-height: normal;
+		font-family: Georgia, "Times New Roman", Times, serif !important;
+		text-shadow: 0 0 0 #000 !important;
+		text-align: left;
+		letter-spacing: normal;
+	}
+	/* Need to reduce the size of the fonts for printing */
+	h1 { font-size: 28pt !important;  }
+	h2 { font-size: 24pt !important; }
+	h3 { font-size: 22pt !important; }
+	h4 { font-size: 22pt !important; font-variant: small-caps; }
+	h5 { font-size: 21pt !important; }
+	h6 { font-size: 20pt !important; font-style: italic; }
+
+	/* SECTION 5: Make hyperlinks more usable.
+	   Ensure links are underlined, and consider appending
+	   the URL to the end of the link for usability. */
+	a:link,
+	a:visited {
+		color: #000 !important;
+		font-weight: bold;
+		text-decoration: underline;
+	}
+	/*
+	.reveal a:link:after,
+	.reveal a:visited:after {
+		content: " (" attr(href) ") ";
+		color: #222 !important;
+		font-size: 90%;
+	}
+	*/
+
+
+	/* SECTION 6: more reveal.js specific additions by @skypanther */
+	ul, ol, div, p {
+		visibility: visible;
+		position: static;
+		width: auto;
+		height: auto;
+		display: block;
+		overflow: visible;
+		margin: 0;
+		text-align: left !important;
+	}
+	.reveal pre,
+	.reveal table {
+		margin-left: 0;
+		margin-right: 0;
+	}
+	.reveal pre code {
+		padding: 20px;
+		border: 1px solid #ddd;
+	}
+	.reveal blockquote {
+		margin: 20px 0;
+	}
+	.reveal .slides {
+		position: static !important;
+		width: auto !important;
+		height: auto !important;
+
+		left: 0 !important;
+		top: 0 !important;
+		margin-left: 0 !important;
+		margin-top: 0 !important;
+		padding: 0 !important;
+		zoom: 1 !important;
+
+		overflow: visible !important;
+		display: block !important;
+
+		text-align: left !important;
+		-webkit-perspective: none;
+		   -moz-perspective: none;
+		    -ms-perspective: none;
+		        perspective: none;
+
+		-webkit-perspective-origin: 50% 50%;
+		   -moz-perspective-origin: 50% 50%;
+		    -ms-perspective-origin: 50% 50%;
+		        perspective-origin: 50% 50%;
+	}
+	.reveal .slides section {
+		visibility: visible !important;
+		position: static !important;
+		width: auto !important;
+		height: auto !important;
+		display: block !important;
+		overflow: visible !important;
+
+		left: 0 !important;
+		top: 0 !important;
+		margin-left: 0 !important;
+		margin-top: 0 !important;
+		padding: 60px 20px !important;
+		z-index: auto !important;
+
+		opacity: 1 !important;
+
+		page-break-after: always !important;
+
+		-webkit-transform-style: flat !important;
+		   -moz-transform-style: flat !important;
+		    -ms-transform-style: flat !important;
+		        transform-style: flat !important;
+
+		-webkit-transform: none !important;
+		   -moz-transform: none !important;
+		    -ms-transform: none !important;
+		        transform: none !important;
+
+		-webkit-transition: none !important;
+		   -moz-transition: none !important;
+		    -ms-transition: none !important;
+		        transition: none !important;
+	}
+	.reveal .slides section.stack {
+		padding: 0 !important;
+	}
+	.reveal section:last-of-type {
+		page-break-after: avoid !important;
+	}
+	.reveal section .fragment {
+		opacity: 1 !important;
+		visibility: visible !important;
+
+		-webkit-transform: none !important;
+		   -moz-transform: none !important;
+		    -ms-transform: none !important;
+		        transform: none !important;
+	}
+	.reveal section img {
+		display: block;
+		margin: 15px 0px;
+		background: rgba(255,255,255,1);
+		border: 1px solid #666;
+		box-shadow: none;
+	}
+
+	.reveal section small {
+		font-size: 0.8em;
+	}
+
+}  
+</script>
+
+
+<script id="pdf-css" type="application/dynamic-css">
+    
+/**
+ * This stylesheet is used to print reveal.js
+ * presentations to PDF.
+ *
+ * https://github.com/hakimel/reveal.js#pdf-export
+ */
+
+* {
+	-webkit-print-color-adjust: exact;
+}
+
+body {
+	margin: 0 auto !important;
+	border: 0;
+	padding: 0;
+	float: none !important;
+	overflow: visible;
+}
+
+html {
+	width: 100%;
+	height: 100%;
+	overflow: visible;
+}
+
+/* Remove any elements not needed in print. */
+.nestedarrow,
+.reveal .controls,
+.reveal .progress,
+.reveal .playback,
+.reveal.overview,
+.fork-reveal,
+.share-reveal,
+.state-background {
+	display: none !important;
+}
+
+h1, h2, h3, h4, h5, h6 {
+	text-shadow: 0 0 0 #000 !important;
+}
+
+.reveal pre code {
+	overflow: hidden !important;
+	font-family: Courier, 'Courier New', monospace !important;
+}
+
+ul, ol, div, p {
+	visibility: visible;
+	position: static;
+	width: auto;
+	height: auto;
+	display: block;
+	overflow: visible;
+	margin: auto;
+}
+.reveal {
+	width: auto !important;
+	height: auto !important;
+	overflow: hidden !important;
+}
+.reveal .slides {
+	position: static;
+	width: 100%;
+	height: auto;
+
+	left: auto;
+	top: auto;
+	margin: 0 !important;
+	padding: 0 !important;
+
+	overflow: visible;
+	display: block;
+
+	-webkit-perspective: none;
+	   -moz-perspective: none;
+	    -ms-perspective: none;
+	        perspective: none;
+
+	-webkit-perspective-origin: 50% 50%; /* there isn't a none/auto value but 50-50 is the default */
+	   -moz-perspective-origin: 50% 50%;
+	    -ms-perspective-origin: 50% 50%;
+	        perspective-origin: 50% 50%;
+}
+
+.reveal .slides section {
+	page-break-after: always !important;
+
+	visibility: visible !important;
+	position: relative !important;
+	display: block !important;
+	position: relative !important;
+
+	margin: 0 !important;
+	padding: 0 !important;
+	box-sizing: border-box !important;
+	min-height: 1px;
+
+	opacity: 1 !important;
+
+	-webkit-transform-style: flat !important;
+	   -moz-transform-style: flat !important;
+	    -ms-transform-style: flat !important;
+	        transform-style: flat !important;
+
+	-webkit-transform: none !important;
+	   -moz-transform: none !important;
+	    -ms-transform: none !important;
+	        transform: none !important;
+}
+
+.reveal section.stack {
+	margin: 0 !important;
+	padding: 0 !important;
+	page-break-after: avoid !important;
+	height: auto !important;
+	min-height: auto !important;
+}
+
+.reveal img {
+	box-shadow: none;
+}
+
+.reveal .roll {
+	overflow: visible;
+	line-height: 1em;
+}
+
+/* Slide backgrounds are placed inside of their slide when exporting to PDF */
+.reveal section .slide-background {
+	display: block !important;
+	position: absolute;
+	top: 0;
+	left: 0;
+	width: 100%;
+	z-index: -1;
+}
+
+/* All elements should be above the slide-background */
+.reveal section>* {
+	position: relative;
+	z-index: 1;
+}
+
+/* Display slide speaker notes when 'showNotes' is enabled */
+.reveal .speaker-notes-pdf {
+	display: block;
+	width: 100%;
+	max-height: none;
+	left: auto;
+	top: auto;
+	z-index: 100;
+}
+
+/* Display slide numbers when 'slideNumber' is enabled */
+.reveal .slide-number-pdf {
+	display: block;
+	position: absolute;
+	font-size: 14px;
+}
+
+</script>
+
+
+<script>
+var style = document.createElement( 'style' );
+style.type = 'text/css';
+var style_script_id = window.location.search.match( /print-pdf/gi ) ? 'pdf-css' : 'paper-css';
+var style_script = document.getElementById(style_script_id).text;
+style.innerHTML = style_script;
+document.getElementsByTagName('head')[0].appendChild(style);
+</script>
+
+    <link href="https://fonts.googleapis.com/css?family=Open+Sans+Condensed:300" rel="stylesheet"> 
+    <link href="https://fonts.googleapis.com/css?family=Open+Sans" rel="stylesheet"> 
+    <link href="https://fonts.googleapis.com/css?family=Raleway" rel="stylesheet"> 
+    <link href="//netdna.bootstrapcdn.com/font-awesome/4.1.0/css/font-awesome.min.css" rel="stylesheet">
+    
+    <style> .reveal i.fa { font-family:FontAwesome; font-style: normal; } </style>
+    <script src="libs/htmlwidgets-0.8/htmlwidgets.js"></script>
+    <script src="libs/jquery-1.12.4/jquery.min.js"></script>
+    <script src="libs/datatables-binding-0.2/datatables.js"></script>
+    <link href="libs/dt-core-1.10.12/css/jquery.dataTables.min.css" rel="stylesheet" />
+    <link href="libs/dt-core-1.10.12/css/jquery.dataTables.extra.css" rel="stylesheet" />
+    <script src="libs/dt-core-1.10.12/js/jquery.dataTables.min.js"></script>
+</head>
+<body>
+  <div class="reveal">
+    <div class="slides">
+
+
+<section id="r-markdown" class="slide level1">
+<h1>R Markdown</h1>
+<p><img src="images/rmarkdown.png" /></p>
+<aside class="notes" data-markdown>
+</aside>
+</section>
+<section id="what-is-r-markdown" class="slide level1" data-background="#401F68">
+<h1>What is<br>R Markdown?</h1>
+<aside class="notes" data-markdown>
+<p>You may have seen the R Markdown file type when you go to make a new document in RStudio, or see documents with R code published online and have some awareness that they were made with this thing called R Markdown.</p>
+<p>R Markdown is a way to write a document with executable R code in it.</p>
+You may want to show both the code and the output, or you may just want to use R generate output that is integrated with other text or content, leaving out the R code.
+</aside>
+</section>
+<section class="slide level1">
+
+<p><a href="http://rmarkdown.rstudio.com/gallery.html">Gallery</a></p>
+<p><a href="https://rpubs.com/">RPubs</a></p>
+<p><a href="https://github.com/juba/rmdformats">Formatted Templates</a></p>
+<p><a href="https://github.com/nuitrcs/rworkshops">Research Computing Workshop</a> <a href="https://nuitrcs.github.io/ggplotworkshop/ggplot.html">Files</a></p>
+</section>
+<section id="why" class="slide level1" data-background="#401F68">
+<h1>Why?</h1>
+</section>
+<section class="slide level1">
+
+<h2 id="reproducible-workflows">Reproducible Workflows</h2>
+</section>
+<section class="slide level1">
+
+<p><a href="https://www.youtube.com/embed/s3JldKoA0zw?showinfo=0&amp;rel=0">video</a></p>
+</section>
+<section class="slide level1">
+
+<h2 id="version-control">Version Control</h2>
+<p><img src="images/versioncontrol.gif" alt="version control" /></p>
+<div class="caption">
+<a href="http://phdcomics.com/comics/archive_print.php?comicid=1531">Piled Higher and Deeper by Jorge Cham</a>
+</div>
+<aside class="notes" data-markdown>
+<p>R Markdown documents are plain text, so you can easily track changes with git or other version control systems.</p>
+Previews in GitHub, or post html there
+</aside>
+</section>
+<section class="slide level1">
+
+<h2 id="multiple-versions">Multiple Versions</h2>
+<p><img src="images/RMarkdownOutputFormats.png" alt="output" /></p>
+<div class="caption">
+<a href="http://rmarkdown.rstudio.com/authoring_quick_tour.html">Source</a>
+</div>
+<aside class="notes" data-markdown>
+HTML for the web, pdf for distribution, Word for your coauthor to work with.
+</aside>
+</section>
+<section class="slide level1">
+
+<h2 id="easy-for-you-and-your-audience">Easy for you and your Audience</h2>
+<p><img src="https://media.giphy.com/media/3o7btNa0RUYa5E7iiQ/giphy.gif" height=300px></p>
+<aside class="notes" data-markdown>
+<p>Make your code and its output accessible to both people who may know R and people who don’t. You have the option to hide your code entirely (or use code folding).</p>
+<p>I’ve had a number of students tell me that they use R or want to use R, but their advisor doesn’t. They don’t want to send their advisor R code, but it can take a lot of time to reformat output, write it up, etc. With R markdown, sharing is easier.</p>
+In my position, I may be sending results of an analysis to someone who is only interested in that – but I don’t have to do a separate write-up from my code. I can have tables, multiple figures, notes – everything in one place, in one document (can compile into a single, sharable document.
+</aside>
+</section>
+<section class="slide level1">
+
+<h2 id="multiple-audiences">Multiple Audiences</h2>
+<p><img src="images/audiences.jpg" alt="audiences" /></p>
+<aside class="notes" data-markdown>
+<p>Lecture Notes</p>
+<p>Assignments/Problem Sets</p>
+<p>Internal vs. External</p>
+<p>Create instructor versions with notes, assignment, and answer key versions of problem sets or lecture notes all from the same source document.</p>
+Set which chunks of code or text will be displayed or evaluated with variables.
+</aside>
+</section>
+<section class="slide level1">
+
+<h2 id="kindness-to-future-self">Kindness to Future Self</h2>
+<p><img src="https://media.giphy.com/media/26gmFUFEvc3cuZiak/giphy.gif" alt="kind" /></p>
+<aside class="notes" data-markdown>
+<p>One important audience is your future self.</p>
+<p>Typing comment lines in R can be cumbersome. That approach works well for scripts, but for analysis, you need more words.</p>
+<p>I’m guessing I’m not the only one who has opened up an old analysis script and had no idea what I was doing or thinking. Why did I exclude those cases? How did I decide on that model specification?</p>
+With R Markdown, writing text with the code is easy, which makes it more likely that you’ll do it!
+</aside>
+</section>
+<section id="how-does-it-work" class="slide level1" data-background="#401F68">
+<h1>How does it work?</h1>
+</section>
+<section class="slide level1">
+
+<p><img src="images/RMarkdownFlow.png" alt="R Markdown Flow" /></p>
+<div class="caption">
+Source: <a href="http://rmarkdown.rstudio.com/lesson-2.html">R Markdown Website</a>
+</div>
+<aside class="notes" data-markdown>
+<p>Markdown lets you write plain text, with some basic formatting. <strong>R</strong> Markdown lets you add chunks of R code to a markdown document. When you compile or “knit” the document, R Markdown then executes those code chunks and incorporates the output and results into a markdown document. That markdown document with the text, code, and results is then compiled into html (for the web), pdf, or Word document, in a variety of different formats.</p>
+</aside>
+</section>
+<section class="slide level1">
+
+<h2 id="r-markdown-1">R Markdown</h2>
+<pre>
+---
+output:
+  html_document:
+    keep_md: true
+---
+
+# Header 1
+
+Markdown text, **bold**, *italics*, 
+[a link](http://google.com).
+
+&#96;&#96;&#96;{r}
+summary(cars)
+&#96;&#96;&#96;
+</pre>
+</section>
+<section class="slide level1">
+
+<h2 id="markdown">Markdown</h2>
+<pre>
+# Header 1
+
+Markdown text, **bold**, *italics*, 
+[a link](http://google.com).
+
+&#96;&#96;&#96;r
+summary(cars)
+&#96;&#96;&#96;
+
+&#96;&#96;&#96;
+##      speed           dist       
+##  Min.   : 4.0   Min.   :  2.00  
+##  1st Qu.:12.0   1st Qu.: 26.00  
+##  Median :15.0   Median : 36.00  
+##  Mean   :15.4   Mean   : 42.98  
+##  3rd Qu.:19.0   3rd Qu.: 56.00  
+##  Max.   :25.0   Max.   :120.00
+&#96;&#96;&#96;
+</pre>
+</section>
+<section class="slide level1">
+
+<h2 id="html-code">HTML Code</h2>
+<pre>
+&lt;h1&gt;Header 1&lt;/h1&gt;
+
+&lt;p&gt;Markdown text, &lt;strong&gt;bold&lt;/strong&gt;, 
+&lt;em&gt;italics&lt;/em&gt;, 
+&lt;a href="http://google.com"&gt;a link&lt;/a&gt;.&lt;/p&gt;
+
+&lt;pre class="r"&gt;&lt;code&gt;summary(cars)&lt;/code&gt;&lt;/pre&gt;
+
+&lt;pre&gt;&lt;code&gt;##      speed           dist       
+##  Min.   : 4.0   Min.   :  2.00  
+##  1st Qu.:12.0   1st Qu.: 26.00  
+##  Median :15.0   Median : 36.00  
+##  Mean   :15.4   Mean   : 42.98  
+##  3rd Qu.:19.0   3rd Qu.: 56.00  
+##  Max.   :25.0   Max.   :120.00&lt;/code&gt;&lt;/pre&gt;
+&lt;/div&gt;
+</pre>
+</section>
+<section id="header-1" class="slide level1">
+<h1>Header 1</h1>
+<p>Markdown text, <strong>bold</strong>, <em>italics</em>, <a href="http://google.com">a link</a>.</p>
+<div class="sourceCode"><pre class="sourceCode r"><code class="sourceCode r"><span class="kw">summary</span>(cars)</code></pre></div>
+<pre><code>##      speed           dist       
+##  Min.   : 4.0   Min.   :  2.00  
+##  1st Qu.:12.0   1st Qu.: 26.00  
+##  Median :15.0   Median : 36.00  
+##  Mean   :15.4   Mean   : 42.98  
+##  3rd Qu.:19.0   3rd Qu.: 56.00  
+##  Max.   :25.0   Max.   :120.00</code></pre>
+</section>
+<section class="slide level1">
+
+<p><img src="images/simplehtml.jpeg" /></p>
+</section>
+<section class="slide level1">
+
+<h2 id="compilation-options">Compilation Options</h2>
+<p>RStudio Knit Button</p>
+<p><img src="images/knitbutton.jpeg" alt="knit" /></p>
+<p><code>rmarkdown::render()</code></p>
+</section>
+<section class="slide level1">
+
+<p><img src="images/chunks.png" alt="chunks" /></p>
+<div class="caption">
+Source: <a href="https://stat585-at-isu.github.io/materials/01_collaborative-environment/03_rmarkdown.html#">Heike Hofman</a>
+</div>
+</section>
+<section class="slide level1">
+
+<h2 id="yaml-header">YAML Header</h2>
+<p>Spacing matters</p>
+<p>Look up the options: <a href="http://rmarkdown.rstudio.com/formats.html">R Markdown Formats</a></p>
+<aside class="notes" data-markdown>
+<p>Spacing - indentation, where colons and other punctuation are, etc. – pay attention</p>
+You can override options set here with a call to render
+</aside>
+</section>
+<section class="slide level1">
+
+<h2 id="text-chunks-markdown">Text Chunks: Markdown</h2>
+<pre><code># Header 1
+## Header 2
+### Header 3
+
+*Italics*
+**Bold**
+
+[link text](http://google.com)
+![caption][images/image.png]
+
+- List Item 1
+- List Item 2
+  - Item 2a
+  - Item 2b
+  
+1. Numbered list item 1
+1. Numbered list item 2</code></pre>
+<aside class="notes" data-markdown>
+<p>The second 1 in the numbered list isn’t a typo – makes it easier to reorder points</p>
+Markdown is also used on GitHub. It’s easy for including formatted code chunks. It’s plain text, but still gives you some formatting capabilities.
+</aside>
+</section>
+<section class="slide level1">
+
+<p><img src="images/chunks.png" alt="chunks" /></p>
+<div class="caption">
+Source: <a href="https://stat585-at-isu.github.io/materials/01_collaborative-environment/03_rmarkdown.html#">Heike Hofman</a>
+</div>
+</section>
+<section class="slide level1">
+
+<h2 id="options-chunk">Options chunk</h2>
+<pre>
+&#96;&#96;&#96;{r setup, include=FALSE}
+knitr::opts_chunk$set(echo = TRUE)
+&#96;&#96;&#96;
+</pre>
+<aside class="notes" data-markdown>
+<p>This isn’t necessarily required</p>
+and what’s in this example doesn’t change the default behavior
+</aside>
+</section>
+<section class="slide level1">
+
+<h2 id="r-chunks">R chunks</h2>
+<pre>
+&#96;&#96;&#96;{r chunkname}
+a<-2
+a + 1
+a<-3
+a + 2
+&#96;&#96;&#96;
+</pre>
+<aside class="notes" data-markdown>
+<p>chunk names will get auto generated if you don’t set them</p>
+<p>chunk names need to be unique – can come up if automatically generating chunks (a bit of a hack)</p>
+<p>if creating external figures, chunk names will get used</p>
+can make it easier to find errors
+</aside>
+</section>
+<section class="slide level1">
+
+<div class="sourceCode"><pre class="sourceCode r"><code class="sourceCode r">a&lt;-<span class="dv">2</span>
+a <span class="op">+</span><span class="st"> </span><span class="dv">1</span></code></pre></div>
+<pre><code>## [1] 3</code></pre>
+<div class="sourceCode"><pre class="sourceCode r"><code class="sourceCode r">a&lt;-<span class="dv">3</span>
+a <span class="op">+</span><span class="st"> </span><span class="dv">2</span></code></pre></div>
+<pre><code>## [1] 5</code></pre>
+<aside class="notes" data-markdown>
+Chunk was automatically divided
+</aside>
+</section>
+<section class="slide level1">
+
+<h2 id="plot">Plot</h2>
+<pre>
+&#96;&#96;&#96;{r, fig.width=8, echo=FALSE}
+plot(cars)
+&#96;&#96;&#96;
+</pre>
+</section>
+<section class="slide level1">
+
+<p><img src="rmarkdown_files/figure-revealjs/unnamed-chunk-2-1.png" width="768" /></p>
+</section>
+<section class="slide level1">
+
+<h2 id="pretty-output-with-knitrkable">Pretty Output with <code>knitr::kable</code></h2>
+</section>
+<section class="slide level1">
+
+<div class="sourceCode"><pre class="sourceCode r"><code class="sourceCode r"><span class="kw">head</span>(mtcars)</code></pre></div>
+<pre><code>##                    mpg cyl disp  hp drat    wt
+## Mazda RX4         21.0   6  160 110 3.90 2.620
+## Mazda RX4 Wag     21.0   6  160 110 3.90 2.875
+## Datsun 710        22.8   4  108  93 3.85 2.320
+## Hornet 4 Drive    21.4   6  258 110 3.08 3.215
+## Hornet Sportabout 18.7   8  360 175 3.15 3.440
+## Valiant           18.1   6  225 105 2.76 3.460
+##                    qsec vs am gear carb
+## Mazda RX4         16.46  0  1    4    4
+## Mazda RX4 Wag     17.02  0  1    4    4
+## Datsun 710        18.61  1  1    4    1
+## Hornet 4 Drive    19.44  1  0    3    1
+## Hornet Sportabout 17.02  0  0    3    2
+## Valiant           20.22  1  0    3    1</code></pre>
+</section>
+<section class="slide level1">
+
+<pre>
+&#96;&#96;&#96;{r, results='asis'}
+library(knitr)
+kable(head(cars))
+&#96;&#96;&#96;
+</pre>
+<table>
+<thead>
+<tr class="header">
+<th></th>
+<th style="text-align: right;">mpg</th>
+<th style="text-align: right;">cyl</th>
+<th style="text-align: right;">disp</th>
+<th style="text-align: right;">hp</th>
+<th style="text-align: right;">drat</th>
+<th style="text-align: right;">wt</th>
+<th style="text-align: right;">qsec</th>
+<th style="text-align: right;">vs</th>
+<th style="text-align: right;">am</th>
+<th style="text-align: right;">gear</th>
+<th style="text-align: right;">carb</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td>Mazda RX4</td>
+<td style="text-align: right;">21.0</td>
+<td style="text-align: right;">6</td>
+<td style="text-align: right;">160</td>
+<td style="text-align: right;">110</td>
+<td style="text-align: right;">3.90</td>
+<td style="text-align: right;">2.620</td>
+<td style="text-align: right;">16.46</td>
+<td style="text-align: right;">0</td>
+<td style="text-align: right;">1</td>
+<td style="text-align: right;">4</td>
+<td style="text-align: right;">4</td>
+</tr>
+<tr class="even">
+<td>Mazda RX4 Wag</td>
+<td style="text-align: right;">21.0</td>
+<td style="text-align: right;">6</td>
+<td style="text-align: right;">160</td>
+<td style="text-align: right;">110</td>
+<td style="text-align: right;">3.90</td>
+<td style="text-align: right;">2.875</td>
+<td style="text-align: right;">17.02</td>
+<td style="text-align: right;">0</td>
+<td style="text-align: right;">1</td>
+<td style="text-align: right;">4</td>
+<td style="text-align: right;">4</td>
+</tr>
+<tr class="odd">
+<td>Datsun 710</td>
+<td style="text-align: right;">22.8</td>
+<td style="text-align: right;">4</td>
+<td style="text-align: right;">108</td>
+<td style="text-align: right;">93</td>
+<td style="text-align: right;">3.85</td>
+<td style="text-align: right;">2.320</td>
+<td style="text-align: right;">18.61</td>
+<td style="text-align: right;">1</td>
+<td style="text-align: right;">1</td>
+<td style="text-align: right;">4</td>
+<td style="text-align: right;">1</td>
+</tr>
+<tr class="even">
+<td>Hornet 4 Drive</td>
+<td style="text-align: right;">21.4</td>
+<td style="text-align: right;">6</td>
+<td style="text-align: right;">258</td>
+<td style="text-align: right;">110</td>
+<td style="text-align: right;">3.08</td>
+<td style="text-align: right;">3.215</td>
+<td style="text-align: right;">19.44</td>
+<td style="text-align: right;">1</td>
+<td style="text-align: right;">0</td>
+<td style="text-align: right;">3</td>
+<td style="text-align: right;">1</td>
+</tr>
+<tr class="odd">
+<td>Hornet Sportabout</td>
+<td style="text-align: right;">18.7</td>
+<td style="text-align: right;">8</td>
+<td style="text-align: right;">360</td>
+<td style="text-align: right;">175</td>
+<td style="text-align: right;">3.15</td>
+<td style="text-align: right;">3.440</td>
+<td style="text-align: right;">17.02</td>
+<td style="text-align: right;">0</td>
+<td style="text-align: right;">0</td>
+<td style="text-align: right;">3</td>
+<td style="text-align: right;">2</td>
+</tr>
+<tr class="even">
+<td>Valiant</td>
+<td style="text-align: right;">18.1</td>
+<td style="text-align: right;">6</td>
+<td style="text-align: right;">225</td>
+<td style="text-align: right;">105</td>
+<td style="text-align: right;">2.76</td>
+<td style="text-align: right;">3.460</td>
+<td style="text-align: right;">20.22</td>
+<td style="text-align: right;">1</td>
+<td style="text-align: right;">0</td>
+<td style="text-align: right;">3</td>
+<td style="text-align: right;">1</td>
+</tr>
+</tbody>
+</table>
+<aside class="notes" data-markdown>
+<p>kable creates table in format appropriate for output type</p>
+results asis prevents further processing of output
+</aside>
+</section>
+<section class="slide level1">
+
+<div class="sourceCode"><pre class="sourceCode r"><code class="sourceCode r"><span class="kw">summary</span>(<span class="kw">lm</span>(mpg <span class="op">~</span><span class="st"> </span>hp <span class="op">+</span><span class="st"> </span>disp, <span class="dt">data=</span>mtcars))</code></pre></div>
+<pre><code>## 
+## Call:
+## lm(formula = mpg ~ hp + disp, data = mtcars)
+## 
+## Residuals:
+##     Min      1Q  Median      3Q     Max 
+## -4.7945 -2.3036 -0.8246  1.8582  6.9363 
+## 
+## Coefficients:
+##              Estimate Std. Error t value Pr(&gt;|t|)
+## (Intercept) 30.735904   1.331566  23.083  &lt; 2e-16
+## hp          -0.024840   0.013385  -1.856 0.073679
+## disp        -0.030346   0.007405  -4.098 0.000306
+##                
+## (Intercept) ***
+## hp          .  
+## disp        ***
+## ---
+## Signif. codes:  
+## 0 &#39;***&#39; 0.001 &#39;**&#39; 0.01 &#39;*&#39; 0.05 &#39;.&#39; 0.1 &#39; &#39; 1
+## 
+## Residual standard error: 3.127 on 29 degrees of freedom
+## Multiple R-squared:  0.7482, Adjusted R-squared:  0.7309 
+## F-statistic: 43.09 on 2 and 29 DF,  p-value: 2.062e-09</code></pre>
+</section>
+<section class="slide level1">
+
+<pre>
+&#96;&#96;&#96;{r, results='asis'}
+reg1 <- lm(mpg ~ hp + disp, data=mtcars)
+kable(summary(reg1)$coef, digits=2)
+&#96;&#96;&#96;
+</pre>
+<table>
+<thead>
+<tr class="header">
+<th></th>
+<th style="text-align: right;">Estimate</th>
+<th style="text-align: right;">Std. Error</th>
+<th style="text-align: right;">t value</th>
+<th style="text-align: right;">Pr(&gt;|t|)</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td>(Intercept)</td>
+<td style="text-align: right;">30.74</td>
+<td style="text-align: right;">1.33</td>
+<td style="text-align: right;">23.08</td>
+<td style="text-align: right;">0.00</td>
+</tr>
+<tr class="even">
+<td>hp</td>
+<td style="text-align: right;">-0.02</td>
+<td style="text-align: right;">0.01</td>
+<td style="text-align: right;">-1.86</td>
+<td style="text-align: right;">0.07</td>
+</tr>
+<tr class="odd">
+<td>disp</td>
+<td style="text-align: right;">-0.03</td>
+<td style="text-align: right;">0.01</td>
+<td style="text-align: right;">-4.10</td>
+<td style="text-align: right;">0.00</td>
+</tr>
+</tbody>
+</table>
+<aside class="notes" data-markdown>
+other options/packages exist too: pander, xtable
+</aside>
+</section>
+<section class="slide level1">
+
+<h2 id="interactive-output-dtdatatable">Interactive Output<br><code>DT::datatable</code></h2>
+<pre>
+&#96;&#96;&#96;{r, echo=FALSE}
+library(DT)
+datatable(mtcars, rownames = FALSE)
+&#96;&#96;&#96;
+</pre>
+</section>
+<section class="slide level1">
+
+<div id="htmlwidget-2659de7fd1a70508f25c" style="width:100%;height:auto;" class="datatables html-widget"></div>
+<script type="application/json" data-for="htmlwidget-2659de7fd1a70508f25c">{"x":{"filter":"none","data":[[21,21,22.8,21.4,18.7,18.1,14.3,24.4,22.8,19.2,17.8,16.4,17.3,15.2,10.4,10.4,14.7,32.4,30.4,33.9,21.5,15.5,15.2,13.3,19.2,27.3,26,30.4,15.8,19.7,15,21.4],[6,6,4,6,8,6,8,4,4,6,6,8,8,8,8,8,8,4,4,4,4,8,8,8,8,4,4,4,8,6,8,4],[160,160,108,258,360,225,360,146.7,140.8,167.6,167.6,275.8,275.8,275.8,472,460,440,78.7,75.7,71.1,120.1,318,304,350,400,79,120.3,95.1,351,145,301,121],[110,110,93,110,175,105,245,62,95,123,123,180,180,180,205,215,230,66,52,65,97,150,150,245,175,66,91,113,264,175,335,109],[3.9,3.9,3.85,3.08,3.15,2.76,3.21,3.69,3.92,3.92,3.92,3.07,3.07,3.07,2.93,3,3.23,4.08,4.93,4.22,3.7,2.76,3.15,3.73,3.08,4.08,4.43,3.77,4.22,3.62,3.54,4.11],[2.62,2.875,2.32,3.215,3.44,3.46,3.57,3.19,3.15,3.44,3.44,4.07,3.73,3.78,5.25,5.424,5.345,2.2,1.615,1.835,2.465,3.52,3.435,3.84,3.845,1.935,2.14,1.513,3.17,2.77,3.57,2.78],[16.46,17.02,18.61,19.44,17.02,20.22,15.84,20,22.9,18.3,18.9,17.4,17.6,18,17.98,17.82,17.42,19.47,18.52,19.9,20.01,16.87,17.3,15.41,17.05,18.9,16.7,16.9,14.5,15.5,14.6,18.6],[0,0,1,1,0,1,0,1,1,1,1,0,0,0,0,0,0,1,1,1,1,0,0,0,0,1,0,1,0,0,0,1],[1,1,1,0,0,0,0,0,0,0,0,0,0,0,0,0,0,1,1,1,0,0,0,0,0,1,1,1,1,1,1,1],[4,4,4,3,3,3,3,4,4,4,4,3,3,3,3,3,3,4,4,4,3,3,3,3,3,4,5,5,5,5,5,4],[4,4,1,1,2,1,4,2,2,4,4,3,3,3,4,4,4,1,2,1,1,2,2,4,2,1,2,2,4,6,8,2]],"container":"<table class=\"display\">\n  <thead>\n    <tr>\n      <th>mpg<\/th>\n      <th>cyl<\/th>\n      <th>disp<\/th>\n      <th>hp<\/th>\n      <th>drat<\/th>\n      <th>wt<\/th>\n      <th>qsec<\/th>\n      <th>vs<\/th>\n      <th>am<\/th>\n      <th>gear<\/th>\n      <th>carb<\/th>\n    <\/tr>\n  <\/thead>\n<\/table>","options":{"columnDefs":[{"className":"dt-right","targets":[0,1,2,3,4,5,6,7,8,9,10]}],"order":[],"autoWidth":false,"orderClasses":false}},"evals":[],"jsHooks":[]}</script>
+</section>
+<section class="slide level1">
+
+<p><img src="images/datatable.jpeg" alt="datatable" /></p>
+</section>
+<section id="section" class="slide level1" data-background="#40e0d0">
+<h1></h1>
+<p><img src="https://media.giphy.com/media/PBM14uaJCbp72/giphy.gif" alt="happy" /></p>
+</section>
+<section id="when-not-to-use-r-markdown" class="slide level1" data-background="#401F68">
+<h1>When not to use R Markdown</h1>
+<p><i class="fa fa-thumbs-o-down fa-3x"></i></p>
+</section>
+<section class="slide level1">
+
+<h2 id="long-data-processing-and-import-scripts">Long data processing and import scripts</h2>
+<aside class="notes" data-markdown>
+You can include scripts from R Markdown documents, but just keep a separate scripts file.
+</aside>
+</section>
+<section class="slide level1">
+
+<h2 id="long-running-or-complex-calculations">Long-running or complex calculations</h2>
+<aside class="notes" data-markdown>
+For long-running code, consider having a separate script pre-produce the data or output if you want to use R markdown for presentation. You can knit/render the R markdown presentation file at the end of re-running your analysis to keep everything up to date.
+</aside>
+</section>
+<section class="slide level1">
+
+<h2 id="precise-formatting-required">Precise formatting required</h2>
+<aside class="notes" data-markdown>
+<p>There are templates for a few journals and you can create your own, but markdown is intentionally limited in the formatting it allows.</p>
+<p>I sometimes see questions of “How do I do X in markdown?” and a legitimate answer to that question is often: “You don’t”</p>
+<p>You can use some html and LaTeX directly for special cases (this presentation for example has a custom CSS style sheet, uses the Reveal JS javascript package, and has some html code directly in the file)</p>
+<p>But if you need precision control there are better ways.</p>
+<p>You can still use many of the packages used by R markdown to produce well formatted tables and other output to include in your reports.</p>
+Still scripting, but a different approach to putting together a document.
+</aside>
+</section>
+<section id="r-notebooks" class="slide level1" data-background="#401F68">
+<h1>R Notebooks</h1>
+<p><a href="http://rmarkdown.rstudio.com/r_notebooks.html">Link</a></p>
+<aside class="notes" data-markdown>
+<p>Moving R Markdown documents in the direction of Jupyter notebooks, with code chunks and the resulting output directly underneath.</p>
+<p>Also adding some formatting and display “magic” and niceness automatically</p>
+<p>Advantages are that you can see everything together</p>
+<p>But I’ve found my workflow not to be as smooth, and the experience of using R Notebooks to not quite be 100% yet.</p>
+A different approach of having everything in the notebook file, versus composing a document where you might be selective about what’s included.
+</aside>
+<aside class="notes" data-markdown>
+</aside>
+</section>
+    </div>
+  </div>
+
+  <script src="libs/reveal.js-3.3.0.1/lib/js/head.min.js"></script>
+  <script src="libs/reveal.js-3.3.0.1/js/reveal.js"></script>
+
+  <script>
+
+      // Full list of configuration options available at:
+      // https://github.com/hakimel/reveal.js#configuration
+      Reveal.initialize({
+        // Push each slide change to the browser history
+        history: true,
+        // Vertical centering of slides
+        center: true,
+        // Transition style
+        transition: 'slide', // none/fade/slide/convex/concave/zoom
+        // Transition style for full page slide backgrounds
+        backgroundTransition: 'default', // none/fade/slide/convex/concave/zoom
+
+
+
+        // Optional reveal.js plugins
+        dependencies: [
+          { src: 'libs/reveal.js-3.3.0.1/plugin/notes/notes.js', async: true },
+        ]
+      });
+    </script>
+  <!-- dynamically load mathjax for compatibility with self-contained -->
+  <script>
+    (function () {
+      var script = document.createElement("script");
+      script.type = "text/javascript";
+      script.src  = "https://mathjax.rstudio.com/latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML";
+      document.getElementsByTagName("head")[0].appendChild(script);
+    })();
+  </script>
+
+<script>
+  (function() {
+    if (window.jQuery) {
+      Reveal.addEventListener( 'slidechanged', function(event) {  
+        window.jQuery(event.previousSlide).trigger('hidden');
+        window.jQuery(event.currentSlide).trigger('shown');
+      });
+    }
+  })();
+</script>
+
+
+  </body>
+</html>

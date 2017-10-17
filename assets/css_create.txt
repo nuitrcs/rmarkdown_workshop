@@ -1,0 +1,5 @@
+sass ~/reveal.js/css/theme/source/crm2.scss > ~/training/ruser/20171018/assets/theme.css
+sass ~/reveal.js/css/theme/source/crm_white.scss > ~/training/ruser/20171018/assets/theme_white.css
+
+Python -m SimpleHTTPServer
+

@@ -2,7 +2,9 @@
 
 This workshop will help you get started using R Markdown to create documents with R code embedded.  
 
-Materials are still being developed.
+# Presentation
+
+
 
 # Exercises
 
@@ -18,6 +20,8 @@ Look at the [HTML version](https://nuitrcs.github.io/rmarkdown_workshop/exercise
 [Official R Markdown Documentation and Guide](http://rmarkdown.rstudio.com/) from RStudio
 
 ## Workshop/Tutorial Materials
+
+[Introduction to R Markdown](http://rmarkdown.rstudio.com/articles_intro.html) by Garrett Grolemund is a good overview from RStudio
 
 [Creating Dynamic Documents with R Markdown and Knitr](http://rpubs.com/marschmi/RMarkdown) by Marian L. Schmidt
 

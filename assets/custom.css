@@ -1,0 +1,75 @@
+.white-font {
+  color: #fff;
+}
+
+.gray-font {
+  color: #342F2E;
+}
+
+.reveal .slides .purple h3 {
+  color: #B6ACD1;
+}
+
+.white-font a:link {color: #E4E0EE; text-decoration: none; }
+.white-font a:active {color: #E4E0EE; text-decoration: none; }
+.white-font a:visited {color: #E4E0EE; text-decoration: none; }
+.white-font a:hover {color: #E4E0EE; text-decoration: underline; }
+
+.reveal li {
+  margin-left: 12%;
+}
+
+.reveal h1 {
+  font-size: 3em;
+}
+
+.reveal h2 {
+  font-size: 2.5em;
+}
+
+.reveal .slides p, .reveal .slides li, .reveal .slides ul {
+  font-family: 'Lato', sans-serif;
+}
+
+.reveal h1, .reveal .slides h2, .reveal .slides h3 {
+  font-family: 'Open Sans Condensed', sans-serif;
+  font-weight: lighter;
+}
+
+.reveal .slides .hcenter {
+  text-align: center;
+}
+
+.reveal pre code {
+  font-size: 1.5em;
+  line-height: 1;
+}
+
+.reveal pre code {
+    white-space: pre-wrap;       /* Since CSS 2.1 */
+    white-space: -moz-pre-wrap;  /* Mozilla, since 1999 */
+    white-space: -pre-wrap;      /* Opera 4-6 */
+    white-space: -o-pre-wrap;    /* Opera 7 */
+    word-wrap: break-word;       /* Internet Explorer 5.5+ */
+}
+
+.reveal section img {
+  border: none;
+}
+
+
+.full {
+    height:100%;
+    width:100%;  
+}
+
+.reveal .caption {
+     bottom:0px;
+     left:0px;
+     position:absolute;
+     font-size: 12px;
+}
+
+body {
+  background-color: #ffffff;
+}
