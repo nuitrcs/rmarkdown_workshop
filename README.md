@@ -4,7 +4,9 @@ This workshop will help you get started using R Markdown to create documents wit
 
 # Presentation
 
+[View Online](https://nuitrcs.github.io/rmarkdown_workshop/rmarkdown.html)
 
+The files, which were created with [RMarkdown](http://rmarkdown.rstudio.com/revealjs_presentation_format.html) and [reveal.js](https://github.com/hakimel/reveal.js/) are `rmarkdown.Rmd` and `rmarkdown.html` (you need a number of libraries and other supporting files for them to work).
 
 # Exercises
 
